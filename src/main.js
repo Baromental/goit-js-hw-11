@@ -33,8 +33,12 @@ function handleSearch(event) {
     .then(responseData => {
       if (responseData.hits.length === 0) {
         iziToast.info({
-          title: 'Info',
           message: 'Sorry, there are no images matching your search query. Please try again.',
+          position: 'topRight',
+          color: '#EF4040',
+          progressBarColor: '#B51B1B',
+          messageColor: '#FAFAFB',
+          icon: './img/bi_x-octagon.svg',
         });
       } else {
         updateGallery(responseData.hits);
